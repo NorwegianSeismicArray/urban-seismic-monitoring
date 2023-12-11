@@ -17,7 +17,9 @@ pip install pandas
 Incase of library trouble :
 
 ImportError: /lib64/libstdc++.so.6: version `CXXABI_1.3.9' not found
+```
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path-to-your-env/urbanmon/lib/
+```
 
 To train auto-encoder for outlier detection (edit scripts for differnt stations):
 ```
@@ -46,7 +48,7 @@ Andreas Köhler - andreas.kohler@norsar.no - [ORCID](https://orcid.org/0000-0002
 Erik B. Myklebust - [ORCID](https://orcid.org/0000-0002-3056-2544)
 
 
-Project Link: [https://github.com/NorwegianSeismicArray/urban-seismic-monitoring](https://github.com/NorwegianSeismicArray/urban-seismic-monitoring])
+Project Link: [https://github.com/NorwegianSeismicArray/urban-seismic-monitoring](https://github.com/NorwegianSeismicArray/urban-seismic-monitoring)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
