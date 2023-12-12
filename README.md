@@ -33,6 +33,18 @@ python run_outlier_detection.py OSLN2 2022-06-01T00:00:00 2023-09-28T00:00:00 4.
 python run_outlier_detection.py OSLN2 2022-10-10T00:00:00 2022-10-12T00:00:00 4.0 0.78
 ```
 
+To locate and plot outlier events:
+```
+python locate_events.py OSLN2 2022-10-10 outlier
+```
+
+To locate and plot sta/lta events:
+```
+python locate_events.py OSLN2 2022-10-10 stalta
+```
+
+
+
 ## License
 
 See `LICENSE.txt` for more information.
