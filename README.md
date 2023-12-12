@@ -21,7 +21,7 @@ ImportError: /lib64/libstdc++.so.6: version `CXXABI_1.3.9' not found
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path-to-your-env/urbanmon/lib/
 ```
 
-To train auto-encoder for outlier detection (edit scripts for differnt stations):
+To train auto-encoder for outlier detection (edit scripts for different stations):
 ```
 python create_training_data_AutoEncoder.py
 python train_AutoEncoder.py 
@@ -69,7 +69,6 @@ Project Link: [https://github.com/NorwegianSeismicArray/urban-seismic-monitoring
 ## Acknowledgments
 
 * Models are built with [TensorFLow](https://www.tensorflow.org/)
-) and [NORSAR](http://www.norsardata.no/NDC/bulletins/regional/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
