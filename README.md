@@ -56,7 +56,7 @@ python create_training_data_BlastClassifier.py
 
 To train blast classifier:
 ```
-train_BlastClassifier.py
+python train_BlastClassifier.py
 ```
 
 To be completed ...
