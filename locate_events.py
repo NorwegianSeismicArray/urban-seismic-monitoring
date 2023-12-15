@@ -92,7 +92,7 @@ if __name__ == '__main__':
 
     if args.mode == 'stalta' : fout= open(outlierpath+'located_events_stalta.out','w')
     elif args.mode == 'classifier' : fout= open(outlierpath+'located_events_classifier.out','w')
-    else : fout= open(outlierpath+'located_events.out','w')
+    else : fout= open(outlierpath+'located_events_outliers.out','w')
 
     print("Reading detections ...")
     eventlist = []
