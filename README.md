@@ -2,7 +2,7 @@
 
 # Urban seismic monitoring
 
-Code and examples related to the paper **Monitoring urban construction and quarry blasts with low-cost seismic sensors and machine learning tools in the city of Oslo, Norway**.
+Code and examples related to the submitted paper **Monitoring urban construction and quarry blasts with low-cost seismic sensors and machine learning tools in the city of Oslo, Norway**.
 
 ## Outlier detection with auto-encoder
 
@@ -59,7 +59,17 @@ To train blast classifier:
 python train_BlastClassifier.py
 ```
 
-To be completed ...
+To run the blast classifier:
+```
+python run_blast_classifier.py
+```
+
+To locate and plot blast classifications:
+```
+python locate_events.py OSLN2 2022-10-10 classifier
+```
+
+
 
 
 ## License

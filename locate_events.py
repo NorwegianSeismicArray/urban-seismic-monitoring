@@ -38,8 +38,6 @@ if __name__ == '__main__':
 
     # where csv files of outlier detection are stored
     outlierpath = "tf/output/live/"
-    if args.mode == 'classfier' :
-        outlierpath = "tf/output/blasts"
   
     # Plot waveforms and envelopes for interactive processing
     plot = False
@@ -111,7 +109,7 @@ if __name__ == '__main__':
                 if args.mode == 'stalta': stalta_vals.append(df['stalta'].to_list()[idx])
                 idx += 1
     else :
-        for outlierfile in sorted(glob.glob(outlierpath+"blast_detections_*__stalta_"+args.mode+".csv")) :
+        for outlierfile in sorted(glob.glob(outlierpath+"blast_detections_*.csv")) :
             df = pd.read_csv(outlierfile)
             for event,end in zip(df['time'].to_list(),df['time_end'].to_list()) :
                 eventlist.append(UTCDateTime(event)+(UTCDateTime(end)-UTCDateTime(event))/2.)

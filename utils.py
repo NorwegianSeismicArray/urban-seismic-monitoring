@@ -38,7 +38,7 @@ def create_windows(start,end,winlen,overlap):
         windows.append((old_time,curr_time))
     return windows
 
-def create_waveforms(start, end, stations, winlen=60, overlap=30, normalize=False, bandpass=(1,49.9), downsample_factor=1):
+def create_waveforms(start, end, stations, winlen=60, overlap=30, normalize=False, bandpass=(1,49.9), downsample_factor=1,stream=None):
     """
     start : UTCDateTime
     end : UTCDateTime
@@ -57,9 +57,12 @@ def create_waveforms(start, end, stations, winlen=60, overlap=30, normalize=Fals
     start -= winlen
     end += winlen
     st = Stream()
-    for stat in stations:
-        st = st + client.get_waveforms('*',stat,'*','*', start, end)
-    st.merge()
+    if stream is None :
+        for stat in stations:
+            st = st + client.get_waveforms('*',stat,'*','*', start, end)
+        st.merge()
+    else :
+        st = stream.slice(starttime=start,endtime=end).copy()
 
     i = -1
     for i,tr in enumerate(st):

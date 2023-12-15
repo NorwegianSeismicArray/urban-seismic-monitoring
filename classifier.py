@@ -190,3 +190,33 @@ def print_layer_output_shapes(model_instance, input_shape):
         y = layer(y)
         print(f"{layer.name}: {y.shape}")
 
+def create_model(hp, num_outputs, crop=False, input_dim = None):
+    model = tf.keras.Sequential()
+    if crop:
+        model.add(RandomCrop1D(hp.Float('random_crop',0.0,0.5,step=0.1,default=0.0)))
+    # Filter length (output dimension time x) - is being tuned
+    # if best hyper paramerters hp are given this is not used
+    d = [29,11,7,7,7]
+    ks = [hp.Int(f'kernel_size_{i}',d[i]//2,49,default=d[i]) for i in range(len(d))]
+    # number of filters (output dimension y) not tuned
+    filters = [96, 256, 384, 384, 256]
+    model.add(AlexNet1D(kernel_sizes=ks,
+                          filters=filters,
+                          num_outputs=num_outputs,
+                          output_type='multiclass',
+                          pooling=hp.Choice('pooling', ['max','avg'])))
+
+    loss = tf.keras.losses.SparseCategoricalCrossentropy()
+    model.compile(tf.keras.optimizers.Adam(1e-4),
+                  loss=loss,
+                  metrics=['accuracy'])
+
+    # Dummy model just to print the correct output shapes
+    if input_dim is not None :
+        modeldummy = AlexNetAndreas(kernel_sizes=[hp.values[f'kernel_size_{i}'] for i in range(len(d))],
+                       filters=filters, num_outputs=num_outputs, output_type='multiclass',
+                       pooling=hp.values['pooling'])
+        print_layer_output_shapes(modeldummy, input_shape=(int((1.0-hp.values['random_crop'])*input_dim), 3))
+    return model
+
+

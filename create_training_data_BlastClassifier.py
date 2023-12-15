@@ -6,7 +6,7 @@ Code for generating input data for blast classification
 """
 
 import numpy as np
-from utils import create_waveforms, create_windows, map_station_to_shake
+from utils import create_waveforms, map_station_to_shake
 from obspy.core import UTCDateTime
 from tqdm import tqdm
 from sklearn.preprocessing import LabelEncoder
