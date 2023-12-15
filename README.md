@@ -14,6 +14,7 @@ pip install tensorflow
 pip install tslearn
 pip install tqdm
 pip install pandas
+pip install keras-tuner
 ```
 
 Incase of library trouble :
@@ -48,9 +49,14 @@ python locate_events.py OSLN2 2022-10-10 stalta
 ## Supervised blast classification
 
 
-To create trainign data for blast classification
+To create training data for blast classification:
 ```
 python create_training_data_BlastClassifier.py
+```
+
+To train blast classifier:
+```
+train_BlastClassifier.py
 ```
 
 To be completed ...
