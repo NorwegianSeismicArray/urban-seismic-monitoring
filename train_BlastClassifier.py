@@ -128,14 +128,14 @@ if __name__ == '__main__':
         p = model.predict(Xte)
         oof[test_idx] += p
 
-        model.save_weights(f'{rootpath}tf/output/models/blast_fold_{i}_weights_{name}_crop_{crop}.h5')
+        model.save_weights(f'{rootpath}tf/output/models/blast_fold_{i}_weights_crop_{crop}.h5')
 
         del model
         tf.keras.backend.clear_session()
 
     oof = np.argmax(oof, axis=1)
 
-    with open(f'{rootpath}tf/output/blast_oof_results_{name}_crop_{crop}.txt','w') as f:
+    with open(f'{rootpath}tf/output/blast_oof_results_crop_{crop}.txt','w') as f:
         f.write(','.join(classes) + '\n')
         f.write(f'Precision {precision_score(y, oof, average=None)} \n')
         f.write(f'Recall {recall_score(y, oof, average=None)} \n')
