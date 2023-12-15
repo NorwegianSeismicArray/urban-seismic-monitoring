@@ -4,6 +4,8 @@
 
 Code and examples related to the submitted paper **Monitoring urban construction and quarry blasts with low-cost seismic sensors and machine learning tools in the city of Oslo, Norway**.
 
+This code will be updated and more documentation will be added. Since wavefrom data is not yet available via FDSN server / EIDA node, currently the code needs to be adapted for new data the user may have. Soon the data used in the paper will be openly available and then the code will run as it is.
+
 ## Outlier detection with auto-encoder
 
 To install requirements :
@@ -30,7 +32,7 @@ python create_training_data_AutoEncoder.py
 python train_AutoEncoder.py 
 ```
 
-To run outlier detection (whole time period and one day):
+To run outlier detection (whole time period or two days):
 ```
 python run_outlier_detection.py OSLN2 2022-06-01T00:00:00 2023-09-28T00:00:00 4.0 0.78
 python run_outlier_detection.py OSLN2 2022-10-10T00:00:00 2022-10-12T00:00:00 4.0 0.78
