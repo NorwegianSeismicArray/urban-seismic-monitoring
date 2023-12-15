@@ -4,6 +4,8 @@
 
 Code and examples related to the paper **Monitoring urban construction and quarry blasts with low-cost seismic sensors and machine learning tools in the city of Oslo, Norway**.
 
+## Outlier detection with auto-encoder
+
 To install requirements :
 ```
 conda create -n urbanmon python=3.10 obspy cartopy pytest pytest-json
@@ -43,6 +45,15 @@ To locate and plot sta/lta events:
 python locate_events.py OSLN2 2022-10-10 stalta
 ```
 
+## Supervised blast classification
+
+
+To create trainign data for blast classification
+```
+python create_training_data_BlastClassifier.py
+```
+
+To be completed ...
 
 
 ## License

@@ -47,7 +47,8 @@ def create_waveforms(start, end, stations, winlen=60, overlap=30, normalize=Fals
     overlap : int, overlap between windows. < winlen
     """
     assert start < end
-    assert overlap < winlen
+    if overlap > 0 :
+        assert overlap < winlen
     assert type(start) == UTCDateTime
     assert type(end) == UTCDateTime
 

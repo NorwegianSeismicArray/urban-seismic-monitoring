@@ -1,3 +1,10 @@
+# Copyright 2023 Andreas Koehler, MIT license
+
+"""
+Code for outlier detection
+
+"""
+
 import numpy as np
 
 from train_AutoEncoder import CAE

@@ -1,3 +1,10 @@
+# Copyright 2023 Andreas Koehler, MIT license
+
+"""
+Code for locating detected events
+
+"""
+
 from obspy import UTCDateTime
 import numpy as np
 import pandas as pd
